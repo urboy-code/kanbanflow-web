@@ -8,7 +8,14 @@ const apiClient = axios.create({
 // function for Api calls
 export const registerUser = (userData) => {
   // CSRF cookies for Sanctum
-  return apiClient.get('/sanctum/csrf-cookie').then(response => {
-    return apiClient.post('/api/v1/register', userData)
+  return apiClient.get('/sanctum/csrf-cookie').then((response) => {
+    return apiClient.post('/api/v1/register', userData);
+  });
+};
+
+// function for endpoint login
+export const loginUser = (credentials) => {
+  return apiClient.get('/sanctum/csrf-cookie').then((response) => {
+    return apiClient.post('/api/v1/login', credentials);
   });
 };

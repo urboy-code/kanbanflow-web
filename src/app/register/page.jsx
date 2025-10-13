@@ -28,7 +28,7 @@ export default function RegisterPage() {
       console.log(response.data);
       setSuccess('Registration successful!');
     } catch (err) {
-      console.error(err.response?.data);
+      console.log(err.response?.data);
       setError(err.response?.data.message || 'Registration failed.');
     }
   };
